@@ -9,37 +9,47 @@
                             .header-section {
                                 border: 2px solid #333;
                                 margin-bottom: 20px;
+                                width: 100%;
                             }
                             .header-row {
-                                display: flex;
-                                align-items: center;
+                                display: table;
+                                width: 100%;
+                                table-layout: fixed;
                             }
                             .header-col-left {
-                                flex: 1;
+                                display: table-cell;
+                                width: 25%;
                                 text-align: center;
                                 padding: 10px;
+                                vertical-align: middle;
                             }
                             .header-col-center {
-                                flex: 1;
+                                display: table-cell;
+                                width: 50%;
                                 background-color: #0052CC;
                                 color: white;
                                 text-align: center;
-                                padding: 15px;
+                                padding: 20px;
+                                vertical-align: middle;
                             }
                             .header-col-center h2 {
                                 margin: 0;
                                 color: white;
-                                font-size: 24px;
+                                font-size: 26px;
                                 text-transform: uppercase;
                                 font-weight: bold;
+                                letter-spacing: 1px;
                             }
                             .header-col-right {
-                                flex: 1;
+                                display: table-cell;
+                                width: 25%;
                                 text-align: center;
                                 padding: 10px;
+                                vertical-align: middle;
                             }
                             .header-section img {
                                 max-height: 80px;
+                                max-width: 100%;
                             }
                             .section-title {
                                 background-color: #0052CC;
