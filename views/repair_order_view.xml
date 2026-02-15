@@ -12,11 +12,17 @@
                     <page string="1. Datos Generales">
                         <group>
                             <field name="partner_id"/>
+                            <field name="partner_email"/>
+                            <field name="partner_street"/>
+                            <field name="partner_phone"/>
                         </group>
                     </page>
                     <page string="2. Datos del Equipo">
                         <group>
                             <field name="vehicle_id"/>
+                            <field name="vehicle_brand"/>
+                            <field name="vehicle_vin"/>
+                            <field name="vehicle_plate"/>
                         </group>
                     </page>
                     <page string="3. Antecedentes del servicio">
