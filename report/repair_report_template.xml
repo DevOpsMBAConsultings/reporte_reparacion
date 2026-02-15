@@ -51,6 +51,11 @@
                                 max-height: 80px;
                                 max-width: 100%;
                             }
+                            .section-wrapper {
+                                page-break-inside: avoid;
+                                orphans: 3;
+                                widows: 3;
+                            }
                             .section-title {
                                 background-color: #0052CC;
                                 color: white;
@@ -60,11 +65,13 @@
                                 font-size: 14px;
                                 font-weight: bold;
                                 text-transform: uppercase;
+                                page-break-after: avoid;
                             }
                             .section-content {
                                 padding: 10px 15px;
                                 border: 1px solid #ddd;
                                 border-top: none;
+                                page-break-inside: avoid;
                             }
                             .data-row {
                                 display: flex;
@@ -93,64 +100,76 @@
                             </div>
                         </div>
 
-                        <div class="section-title">1. DATOS GENERALES:</div>
-                        <div class="section-content">
-                            <div class="data-row">
-                                <div class="data-label">CLIENTE:</div>
-                                <div class="data-value"><span t-field="doc.partner_id.name"/></div>
-                            </div>
-                            <div class="data-row">
-                                <div class="data-label">DIRECCIÓN:</div>
-                                <div class="data-value"><span t-field="doc.partner_id.street"/></div>
-                            </div>
-                            <div class="data-row">
-                                <div class="data-label">EMAIL:</div>
-                                <div class="data-value"><span t-field="doc.partner_id.email"/></div>
-                            </div>
-                            <div class="data-row">
-                                <div class="data-label">TELÉFONO:</div>
-                                <div class="data-value"><span t-field="doc.partner_id.phone"/></div>
-                            </div>
-                        </div>
-
-                        <div class="section-title">2. DATOS DEL EQUIPO:</div>
-                        <div class="section-content">
-                            <div class="data-row">
-                                <div class="data-label">MARCA:</div>
-                                <div class="data-value"><span t-field="doc.vehicle_id.brand_id.name"/></div>
-                            </div>
-                            <div class="data-row">
-                                <div class="data-label">VIN:</div>
-                                <div class="data-value"><span t-field="doc.vehicle_id.vin_sn"/></div>
-                            </div>
-                            <div class="data-row">
-                                <div class="data-label">MODELO:</div>
-                                <div class="data-value"><span t-field="doc.vehicle_id.model_id.name"/></div>
-                            </div>
-                            <div class="data-row">
-                                <div class="data-label">PLACA:</div>
-                                <div class="data-value"><span t-field="doc.vehicle_id.license_plate"/></div>
+                        <div class="section-wrapper">
+                            <div class="section-title">1. DATOS GENERALES:</div>
+                            <div class="section-content">
+                                <div class="data-row">
+                                    <div class="data-label">CLIENTE:</div>
+                                    <div class="data-value"><span t-field="doc.partner_id.name"/></div>
+                                </div>
+                                <div class="data-row">
+                                    <div class="data-label">DIRECCIÓN:</div>
+                                    <div class="data-value"><span t-field="doc.partner_id.street"/></div>
+                                </div>
+                                <div class="data-row">
+                                    <div class="data-label">EMAIL:</div>
+                                    <div class="data-value"><span t-field="doc.partner_id.email"/></div>
+                                </div>
+                                <div class="data-row">
+                                    <div class="data-label">TELÉFONO:</div>
+                                    <div class="data-value"><span t-field="doc.partner_id.phone"/></div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="section-title">3. ANTECEDENTES DEL SERVICIO:</div>
-                        <div class="section-content">
-                            <p><span t-field="doc.antecedentes_servicio"/></p>
+                        <div class="section-wrapper">
+                            <div class="section-title">2. DATOS DEL EQUIPO:</div>
+                            <div class="section-content">
+                                <div class="data-row">
+                                    <div class="data-label">MARCA:</div>
+                                    <div class="data-value"><span t-field="doc.vehicle_id.brand_id.name"/></div>
+                                </div>
+                                <div class="data-row">
+                                    <div class="data-label">VIN:</div>
+                                    <div class="data-value"><span t-field="doc.vehicle_id.vin_sn"/></div>
+                                </div>
+                                <div class="data-row">
+                                    <div class="data-label">MODELO:</div>
+                                    <div class="data-value"><span t-field="doc.vehicle_id.model_id.name"/></div>
+                                </div>
+                                <div class="data-row">
+                                    <div class="data-label">PLACA:</div>
+                                    <div class="data-value"><span t-field="doc.vehicle_id.license_plate"/></div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="section-title">4. HALLAZGOS:</div>
-                        <div class="section-content">
-                            <p><span t-field="doc.hallazgos"/></p>
+                        <div class="section-wrapper">
+                            <div class="section-title">3. ANTECEDENTES DEL SERVICIO:</div>
+                            <div class="section-content">
+                                <p><span t-field="doc.antecedentes_servicio"/></p>
+                            </div>
                         </div>
 
-                        <div class="section-title">5. ACCIÓN CORRECTIVA:</div>
-                        <div class="section-content">
-                            <p><span t-field="doc.accion_correctiva"/></p>
+                        <div class="section-wrapper">
+                            <div class="section-title">4. HALLAZGOS:</div>
+                            <div class="section-content">
+                                <p><span t-field="doc.hallazgos"/></p>
+                            </div>
                         </div>
 
-                        <div class="section-title">6. RECOMENDACIONES:</div>
-                        <div class="section-content">
-                            <p><span t-field="doc.recomendaciones"/></p>
+                        <div class="section-wrapper">
+                            <div class="section-title">5. ACCIÓN CORRECTIVA:</div>
+                            <div class="section-content">
+                                <p><span t-field="doc.accion_correctiva"/></p>
+                            </div>
+                        </div>
+
+                        <div class="section-wrapper">
+                            <div class="section-title">6. RECOMENDACIONES:</div>
+                            <div class="section-content">
+                                <p><span t-field="doc.recomendaciones"/></p>
+                            </div>
                         </div>
                     </div>
                 </t>
