@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_repair_order_form_inherit" model="ir.ui.view">
+            <field name="name">repair.order.form.inherit</field>
+            <field name="model">repair.order</field>
+            <field name="inherit_id" ref="repair.view_repair_order_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="1. Datos Generales">
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="address_id"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                        </group>
+                    </page>
+                    <page string="2. Datos del Equipo">
+                        <group>
+                            <field name="vehicle_id"/>
+                            <field name="model_id"/>
+                            <field name="license_plate"/>
+                            <field name="vin_sn"/>
+                        </group>
+                    </page>
+                    <page string="3. Antecedentes del servicio">
+                        <field name="antecedentes_servicio"/>
+                    </page>
+                    <page string="4. Hallazgos">
+                        <field name="hallazgos"/>
+                    </page>
+                    <page string="5. Acción Correctiva">
+                        <field name="accion_correctiva"/>
+                    </page>
+                    <page string="6. Recomendaciones">
+                        <field name="recomendaciones"/>
+                    </page>
+                </notebook>
+                <field name="product_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="product_qty" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="product_uom" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                 <field name="partner_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+            </field>
+        </record>
+
+        <!-- Add customer_id to the fleet.vehicle form view -->
+        <record id="fleet_vehicle_view_form_inherit" model="ir.ui.view">
+            <field name="name">fleet.vehicle.form.inherit</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="customer_id"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

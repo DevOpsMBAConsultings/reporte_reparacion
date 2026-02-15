@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_repair_order_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="header">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="/reporte_reparacion/static/src/img/logo1.png" style="max-height: 80px;"/>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <h2>INFORME DE TALLER</h2>
+                                </div>
+                                <div class="col-3 text-right">
+                                    <img src="/reporte_reparacion/static/src/img/logo2.png" style="max-height: 80px;"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="oe_structure"/>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h3>1. Datos Generales</h3>
+                                <p><strong>Cliente:</strong> <span t-field="doc.partner_id.name"/></p>
+                                <p><strong>Dirección:</strong> <span t-field="doc.address_id.street"/></p>
+                                <p><strong>Email:</strong> <span t-field="doc.email"/></p>
+                                <p><strong>Teléfono:</strong> <span t-field="doc.phone"/></p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h3>2. Datos del Equipo</h3>
+                                <p><strong>Vehículo:</strong> <span t-field="doc.vehicle_id.name"/></p>
+                                <p><strong>Modelo:</strong> <span t-field="doc.model_id.name"/></p>
+                                <p><strong>Placa:</strong> <span t-field="doc.license_plate"/></p>
+                                <p><strong>VIN/SN:</strong> <span t-field="doc.vin_sn"/></p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h3>3. Antecedentes del servicio</h3>
+                                <p><span t-field="doc.antecedentes_servicio"/></p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h3>4. Hallazgos</h3>
+                                <p><span t-field="doc.hallazgos"/></p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h3>5. Acción Correctiva</h3>
+                                <p><span t-field="doc.accion_correctiva"/></p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h3>6. Recomendaciones</h3>
+                                <p><span t-field="doc.recomendaciones"/></p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
