@@ -4,7 +4,7 @@ from odoo import models, fields, api
 class FleetVehicle(models.Model):
     _inherit = 'fleet.vehicle'
 
-    customer_id = fields.Many2one('res.partner', string='Customer')
+    customer_id = fields.Many2one('res.partner', string='Cliente')
 
 class RepairOrder(models.Model):
     _inherit = 'repair.order'

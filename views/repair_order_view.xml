@@ -54,7 +54,7 @@
             <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
             <field name="arch" type="xml">
                 <field name="company_id" position="after">
-                    <field name="customer_id"/>
+                    <field name="customer_id" placeholder="Nombre del Cliente"/>
                 </field>
             </field>
         </record>
